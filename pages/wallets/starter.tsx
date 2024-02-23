@@ -28,7 +28,7 @@ const Starter = () => {
     return (
         <>
             <WalletModalProvider>
-                <main className="min-h-screen text-blue-50">
+                <main className="min-h-screen text-blue-400">
                     <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 p-4">
                         <div className="col-span-1 lg:col-start-2 lg:col-end-4 rounded-lg bg-[#2a302f] h-60 p-4">
                             <div className="flex justify-center pt-4">
