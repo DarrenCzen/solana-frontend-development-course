@@ -13,6 +13,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
+    "pretty": true,
     "incremental": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "scripts/ping.js", "pages/index.jsx", "pages/api/index.js", "pages/sendsol/sendsol.jsx", "pages/_app.jsx"],
