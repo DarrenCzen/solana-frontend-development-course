@@ -11,7 +11,6 @@ import { useConnection, useWallet } from '@solana/wallet-adapter-react';
 
 const Starter = () => {
     const [balance, setBalance] = useState<number | null>(0);
-    const endpoint = web3.clusterApiUrl('devnet');
 
     const { connection } = useConnection();
     const { publicKey } = useWallet();
@@ -29,28 +28,30 @@ const Starter = () => {
     return (
         <>
             <WalletModalProvider>
-                <main className="min-h-screen text-white">
-                    <div className="grid gap-4 p-4">
-                        <div className="flex justify-center pt-4">
-                            <h2>How much Solana do you have?</h2>
-                        </div>
-                        <div className="my-8 mx-80 bg-[#222524] border-2 border-gray-500 rounded-lg p-8">
-                            {publicKey ? (
-                                <ul className="p-2">
-                                    <li className="text-sm flex justify-between">
-                                        <p className="tracking-wider">
-                                            SOL Balance
-                                        </p>
-                                        <p className="text-helius-orange italic font-semibold">
-                                            {balance}
-                                        </p>
-                                    </li>
-                                </ul>
-                            ) : (
-                                <div className="text-center">
-                                    <p>Please connect your wallet</p>
-                                </div>
-                            )}
+                <main className="min-h-screen text-blue-50">
+                    <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 p-4">
+                        <div className="col-span-1 lg:col-start-2 lg:col-end-4 rounded-lg bg-[#2a302f] h-60 p-4">
+                            <div className="flex justify-center pt-4">
+                                <h1>How much Solana do you have?</h1>
+                            </div>
+                            <div className="m-8 bg-[#222524] border-2 border-gray-500 rounded-lg p-8">
+                                {publicKey ? (
+                                    <ul className="p-2">
+                                        <li className="text-sm flex justify-between">
+                                            <p className="tracking-wider">
+                                                SOL Balance
+                                            </p>
+                                            <p className="text-helius-orange italic font-semibold">
+                                                {balance}
+                                            </p>
+                                        </li>
+                                    </ul>
+                                ) : (
+                                    <div className="text-center">
+                                        <p>Please connect your wallet</p>
+                                    </div>
+                                )}
+                            </div>
                         </div>
                     </div>
                 </main>
