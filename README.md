@@ -56,9 +56,9 @@ If you find these learning materials helpful, you can help me out in the followi
 
 # Troubleshooting
 
-Was using WSL so i faced some minor issues.
+## Issue 1: Error installing AVM
 
-Issue 1 - Error installing AVM
+If you encounter the following error while installing AVM:
 
 ```
 error: linker `cc` not found
@@ -78,28 +78,42 @@ error: failed to compile `avm v0.29.0 (https://github.com/project-serum/anchor#6
 To reuse those artifacts with a future compilation, set the environment variable `CARGO_TARGET_DIR` to that path.
 ```
 
-Issue 1 Fix
+You can fix this issue by running the following commands:
 
-```
+```bash
 sudo apt-get update
 sudo apt-get install build-essential
 ```
 
-Issue 2 - Hot Reload not working on WSL
-Issue 2 Fix - Set WSL version to 1 as version 2 does not work with Hot Reload
+## Issue 2: React/NextJS Hot Reload not working on WSL2
 
+You can fix this issue by running the following commands:  
+Set WSL version to 1 as version 2 does not work with Hot Reload.
+
+Open CMD Prompt (Not WSL)
+
+```bash
+wsl --set-version Ubuntu-22.04 1
+wsl -l -v
 ```
 
-Go to command prompt
+To revert back to version 2
 
-wsl --set-version Ubuntu 1
+```bash
+wsl --set-version Ubuntu-22.04 2
+```
 
-to check version
+## Issue 3: Setting Solana CLI to Devnet instead of
 
-wsl -l -v
+You can configure the testnet by running the following commands:
 
-to revert back
+```bash
+solana config set --url https://api.devnet.solana.com
+solana config get
+```
 
-wsl --set-version Ubuntu 2
+To revert back to mainnet
 
+```bash
+solana config set --url https://api.mainnet-beta.solana.com
 ```
