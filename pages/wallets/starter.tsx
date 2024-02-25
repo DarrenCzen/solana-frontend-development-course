@@ -8,6 +8,7 @@ import * as web3 from '@solana/web3.js';
 import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
 // imports methods for deriving data from the wallet's data store
 import { useConnection, useWallet } from '@solana/wallet-adapter-react';
+import { Constants } from '../../models/constants/constants';
 
 const Starter = () => {
     const [balance, setBalance] = useState<number | null>(0);
@@ -48,7 +49,7 @@ const Starter = () => {
                                     </ul>
                                 ) : (
                                     <div className="text-center">
-                                        <p>Please connect your wallet</p>
+                                        <p>{Constants.TEXT_CONNECT_WALLET}</p>
                                     </div>
                                 )}
                             </div>

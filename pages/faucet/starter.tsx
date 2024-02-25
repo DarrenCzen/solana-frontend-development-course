@@ -7,8 +7,7 @@ import { useConnection, useWallet } from '@solana/wallet-adapter-react';
 import { ExternalLinkIcon } from '@heroicons/react/outline';
 // library we use to interact with the solana json rpc api
 import * as web3 from '@solana/web3.js';
-
-const CONNECT_WALLET = 'Please connect your wallet';
+import { Constants } from '../../models/constants/constants';
 
 const Starter = () => {
     const [txSig, setTxSig] = useState('');
@@ -19,8 +18,8 @@ const Starter = () => {
         event.preventDefault();
 
         if (!publicKey || !connection) {
-            toast.error(CONNECT_WALLET);
-            throw CONNECT_WALLET;
+            toast.error(Constants.TEXT_CONNECT_WALLET);
+            throw Constants.TEXT_CONNECT_WALLET;
         }
 
         const sender = web3.Keypair.generate();
