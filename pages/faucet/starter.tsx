@@ -7,7 +7,7 @@ import { useConnection, useWallet } from '@solana/wallet-adapter-react';
 import { ExternalLinkIcon } from '@heroicons/react/outline';
 // library we use to interact with the solana json rpc api
 import * as web3 from '@solana/web3.js';
-import { Constants } from '../../models/constants/constants';
+import { Constants } from '../../models/constants/Constants';
 
 const Starter = () => {
     const [txSig, setTxSig] = useState('');
